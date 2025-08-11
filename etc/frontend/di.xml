@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.w3.org/2001/XMLSchema.xsd">
+    <type name="Magento\Sales\Block\Order\Items">
+        <plugin name="vendor_partialcancel_items_plugin" type="Vendor\PartialCancel\Plugin\Sales\Block\Order\ItemsPlugin" sortOrder="10"/>
+    </type>
+</config>

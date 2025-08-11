@@ -1,0 +1,17 @@
+<?php /** @var $block \Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer */ ?>
+<?php $item = $block->getItem(); ?>
+<tr>
+    <td><?= $block->escapeHtml($item->getName()) ?></td>
+    <td><?= (int)$item->getQtyOrdered() ?></td>
+    <td><?= $block->getOrder()->formatPrice($item->getRowTotal()) ?></td>
+    <td>
+        <?php if ($item->getQtyInvoiced() == 0 && $item->getQtyShipped() == 0 && $item->getQtyCanceled() == 0): ?>
+            <a href="<?= $block->getUrl('partialcancel/order/cancelitem', [
+                'order_id' => $item->getOrderId(),
+                'item_id' => $item->getItemId()
+            ]) ?>" class="action cancel" style="color:red;">
+                <?= __('Cancel Item') ?>
+            </a>
+        <?php endif; ?>
+    </td>
+</tr>

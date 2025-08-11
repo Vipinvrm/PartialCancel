@@ -1,0 +1,8 @@
+type Mutation {
+    cancelOrderItem(order_id: Int!, item_id: Int!): CancelOrderItemOutput @resolve(field: "Vendor\\PartialCancel\\Model\\GraphQL\\Resolver\\CancelOrderItem")
+}
+
+type CancelOrderItemOutput {
+    success: Boolean!
+    message: String
+}
